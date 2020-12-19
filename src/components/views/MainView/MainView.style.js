@@ -4,6 +4,6 @@ import { withStyles } from '@material-ui/core/styles'
 export const StyledMainView = withStyles(({ palette }) => ({
    root: {
       backgroundColor: palette.primary.main,
-      height: '100vh'
+      minHeight: '100vh'
    },
 }))(Grid)

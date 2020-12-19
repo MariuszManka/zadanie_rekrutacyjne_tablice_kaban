@@ -5,8 +5,8 @@ import {StyledMainView} from './MainView.style'
 
 const MainView = () => (
    <StyledMainView container  direction="column"  wrap="nowrap">
-      <TopBar />
-      <ListBoard />
+      <TopBar item/>
+      <ListBoard item/>
    </StyledMainView>
    )
 

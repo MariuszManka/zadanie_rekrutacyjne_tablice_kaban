@@ -1,7 +1,7 @@
+import { CONSTANS } from 'actions'
 
-const allLists = {
-   lists: {
-      'list-1': {
+const allLists = [
+      {
          id: 'list-1',
          title: 'TODO',
          cards: [
@@ -16,7 +16,7 @@ const allLists = {
             content: "Buy christmas gifts for Annie, John and Ralph",
          }],
       },
-      'list-2': {
+      {
          id: 'list-2',
          title: 'IN PROGRESS',
          cards: [
@@ -35,8 +35,7 @@ const allLists = {
             title: 'Do Homework',
             content: "Complete math and physics homework for next week",
          },],
-      },
-       'list-3': {
+      },{
          id: 'list-3',
          title: 'COMPLETE',
          cards: [{
@@ -45,13 +44,32 @@ const allLists = {
             content: 'Design, create and develop a desktop application based on React and Redux',
          }],
       },
-   }
-}
+]
    
 const rootReducer = (state = allLists, action) => {
    switch (action.type) {
-      case 'abc':
-        return state
+      case CONSTANS.ADD_CARD: {
+
+         const {payload: {content, listID, title }} = action
+
+         const newCard = {
+            id: 'card-7',
+            title,
+            content
+         }
+
+         const newState = state.map(list => {
+
+            if (list.id === listID) {
+               return {
+                  ...list,
+                  cards: [...list.cards, newCard]
+               }
+            }
+            return list
+         })
+         return newState
+      }
    
       default:
          return state

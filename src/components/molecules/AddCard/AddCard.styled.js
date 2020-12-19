@@ -1,4 +1,4 @@
-import {  Box, Paper, InputBase, Button } from '@material-ui/core'
+import {  Box, Paper, Button } from '@material-ui/core'
 import { withStyles, fade } from '@material-ui/core/styles'
 
 export const StyledAddCard = withStyles((theme) => ({
@@ -17,23 +17,10 @@ export const StyledAddCard = withStyles((theme) => ({
 
 export const StyledBox = withStyles((theme) => ({
    root: {
-     marginTop:theme.spacing(3),
+     marginTop:theme.spacing(4),
    },
 }))(Box)
 
-
-export const StyledInputContainer = withStyles((theme) => ({
-   root: {
-      margin: theme.spacing(1),
-      paddingBottom: theme.spacing(5),
-   },
-}))(Paper)
-
-export const StyledInputBase = withStyles((theme) => ({
-   root: {
-      padding: theme.spacing(1),
-   },
-}))(InputBase)
 
 export const StyledButton = withStyles((theme) => ({
    root: {
