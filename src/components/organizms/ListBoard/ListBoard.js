@@ -1,24 +1,20 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
-import { DragDropContext } from 'react-beautiful-dnd'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import  List  from '../List/List'
+import List from '../List/List'
 import { StyledListWrapper } from './ListBoard.styled'
 
 const ListBoard = () => {
 
-    const lists = useSelector((state) => state )
+    const lists = useSelector((state) => state)
 
-    return(
-    <DragDropContext>
-        <StyledListWrapper> 
+    return (
+        <StyledListWrapper >
             {
-                lists.map(list => <List key={list.id} listID={list.id} listTitle={list.title}/>)
+                lists.map((list, index) => <List key={list.id} listID={list.id} listTitle={list.title} index={index} />)
             }
         </StyledListWrapper>
-    </DragDropContext>
-      )
 
-} 
+    )
+}
 
 export default ListBoard

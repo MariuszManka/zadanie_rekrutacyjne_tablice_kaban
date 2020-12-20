@@ -1,9 +1,9 @@
 import { withStyles, } from '@material-ui/core/styles'
-import {Paper, InputBase} from '@material-ui/core'
+import { Paper, InputBase } from '@material-ui/core'
 
 export const StyledInputContainer = withStyles((theme) => ({
    root: {
-      margin: theme.spacing(1)
+      margin: theme.spacing(1, 1, 1.5, 1)
    },
 }))(Paper)
 
