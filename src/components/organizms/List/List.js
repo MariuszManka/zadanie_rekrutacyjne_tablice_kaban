@@ -19,7 +19,9 @@ const ListCards = ({ listID }) => {
             cardID={card.id}
             index={index}
             content={card.content}
-            title={card.title} />
+            title={card.title} 
+            listID={listID}
+            />
       ))
    )
 }
@@ -28,9 +30,9 @@ const List = ({ listID, index, listTitle }) => {
    const classes = ListStyles()
 
    return (
-      <Draggable draggableId={listID} index={index}>
+      <Draggable draggableId={listID} index={index} >
          {provided => (
-            <div ref={provided.innerRef} {...provided.draggableProps}>
+            <div ref={provided.innerRef} {...provided.draggableProps} >
                <Paper className={classes.root} elevation={3} {...provided.dragHandleProps}>
                   <EditableTitle listTitle={listTitle} listID={listID} />
                   <Droppable droppableId={listID}>

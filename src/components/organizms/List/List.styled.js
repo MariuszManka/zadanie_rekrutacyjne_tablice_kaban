@@ -4,6 +4,6 @@ export const ListStyles = makeStyles((theme) => ({
    root: {
       width: 300, 
       backgroundColor: theme.palette.list.background,
-      margin: theme.spacing(3)
-   }
+      margin: theme.spacing(3),
+   },
 }))

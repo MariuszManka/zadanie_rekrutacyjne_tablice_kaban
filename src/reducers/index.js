@@ -102,19 +102,22 @@ const rootReducer = (state = allLists, action) => {
          } = action.payload
 
          const newState = [...state]
-
+         
+         // Drag lists
          if (type === 'list') {
             const list = newState.splice(droppableIndexStart, 1)
             newState.splice(droppableIndexEnd, 0, ...list)
             return newState
          }
 
+         // Drag Card in the same list
          if (droppableIdStart === droppableIdEnd) {
             const lists = state.find(list => droppableIdStart === list.id)
             const card = lists.cards.splice(droppableIndexStart, 1)
             lists.cards.splice(droppableIndexEnd, 0, ...card)
          }
 
+          // Drag Card from list to list
          if (droppableIdStart !== droppableIdEnd) {
             const listStart = state.find(list => droppableIdStart === list.id)
             const card = listStart.cards.splice(droppableIndexStart, 1)
@@ -124,7 +127,22 @@ const rootReducer = (state = allLists, action) => {
 
          return newState
       }
+      case CONSTANS.CARD_DELETE: {
+    
+           const { cardID, listID} = action.payload
 
+      const newState = state.map(list => {
+            if (list.id === listID) {
+               return {
+                  ...list,
+                  cards: list.cards.filter(card => card.id !==  cardID)
+               }
+            }
+            return list
+         })
+
+         return newState
+      }
 
       default:
          return state
