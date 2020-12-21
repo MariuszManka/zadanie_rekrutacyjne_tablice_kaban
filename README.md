@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Site preview available at:
 
-[zadanie-rekrutacyjne-kaban](https://zadanie-rekrutacyjne-kaban.netlify.app)
+### preview: [zadanie-rekrutacyjne-kaban](https://zadanie-rekrutacyjne-kaban.netlify.app)
 
 In the project directory, you can run:
 
