@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Site preview available at:
+
+[zadanie-rekrutacyjne-kaban](https://zadanie-rekrutacyjne-kaban.netlify.app)
 
 In the project directory, you can run:
 
